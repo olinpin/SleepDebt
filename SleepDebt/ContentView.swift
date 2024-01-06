@@ -14,9 +14,24 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Button(action: {
+                manager.getSleepForLast7Days()
+                print(manager.sleepForLast7Days)
+                var seconds = manager.sleepForLast7Days
+                print("hours: ", seconds / 3600, " minutes: ", (seconds % 3600) / 60, " seconds: ", (seconds % 3600) % 60)
+            }) {
+                Text("Hello, world!")
+            }
         }
         .padding()
+        .onAppear {
+            manager.getSleepForLast7Days()
+            print(manager.sleepForLast7Days)
+            var seconds = manager.sleepForLast7Days
+            print("hours: ", seconds / 3600, " minutes: ", (seconds % 3600) / 60, " seconds: ", (seconds % 3600) % 60)
+            
+            
+        }
     }
 }
 
