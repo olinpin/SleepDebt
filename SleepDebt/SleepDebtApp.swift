@@ -21,7 +21,7 @@ struct SleepDebtApp: App {
 }
 
 class SleepDebtSettings: ObservableObject {
-    @Published var sleepDebtPeriod = 30
+    @Published var sleepDebtPeriod = Days.thirty
     @Published var repaymentPeriod = 7
     @Published var desiredHoursOfSleep = 8
 }

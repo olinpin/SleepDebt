@@ -18,13 +18,18 @@ struct SettingsView: View {
         NavigationStack {
             List {
                 Section {
-                    SettingsNumberFieldView(value: $settings.sleepDebtPeriod, focusItem: $focusItem, text: sleepDebtString)
+                    Picker(sleepDebtString, selection: $settings.sleepDebtPeriod) {
+                        ForEach(Days.allCases, id: \.self) { day in
+                            Text(String(describing: day.rawValue))
+                        }
+                    }
+                    .pickerStyle(.menu)
                     SettingsNumberFieldView(value: $settings.repaymentPeriod, focusItem: $focusItem, text: repaymentString)
                     SettingsNumberFieldView(value: $settings.desiredHoursOfSleep, focusItem: $focusItem, text: desiredHoursOfSleepString)
                 }
                 
             }
-        .navigationTitle("Settings")
+            .navigationTitle("Settings")
         }
         .onTapGesture{
             focusItem = false

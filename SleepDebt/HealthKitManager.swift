@@ -8,11 +8,17 @@
 import Foundation
 import HealthKit
 
+enum Days: Int, CaseIterable {
+    case seven = 7
+    case thirty = 30
+    case threehundredsixtyfive = 365
+}
+
 class HealthKitManager: ObservableObject {
     
     let healthStore = HKHealthStore()
     
-    var sleepForLastXDays: Dictionary<Int, Int> = [:]
+    @Published var sleepForLastXDays: Dictionary<Days, Int> = [:]
     
     init() {
         let sleep = HKCategoryType(.sleepAnalysis)
@@ -26,25 +32,36 @@ class HealthKitManager: ObservableObject {
                 print(error)
             }
         }
-        self.getSleepForLastXDays(days: 7)
-        self.getSleepForLastXDays(days: 30)
+        self.updateSleep()
+    }
+    
+    func updateSleep() {
+        self.getSleepForLastXDays(days: .seven)
+        self.getSleepForLastXDays(days: .thirty)
+        self.getSleepForLastXDays(days: .threehundredsixtyfive)
     }
     
     func getSleepForLast7Days() -> Int {
-        self.getSleepForLastXDays(days: 7)
-        return self.sleepForLastXDays[7] ?? 0
+        self.getSleepForLastXDays(days: .seven)
+        return self.sleepForLastXDays[Days.seven] ?? 0
     }
     
     func getSleepForLast30Days() -> Int{
-        self.getSleepForLastXDays(days: 30)
-        return self.sleepForLastXDays[30] ?? 0
+        self.getSleepForLastXDays(days: .thirty)
+        return self.sleepForLastXDays[Days.thirty] ?? 0
     }
     
-    private func getSleepForLastXDays(days: Int) {
+    func getSleepForLast365Days() -> Int{
+        self.getSleepForLastXDays(days: .threehundredsixtyfive)
+        return self.sleepForLastXDays[Days.threehundredsixtyfive] ?? 0
+    }
+    
+    private func getSleepForLastXDays(days: Days) {
         var totalSleep = 0
         let sleep = HKCategoryType(.sleepAnalysis)
         let sleepPredicate = HKCategoryValueSleepAnalysis.predicateForSamples(equalTo: HKCategoryValueSleepAnalysis.allAsleepValues)
-        let lastXDays = Date().addingTimeInterval(TimeInterval(-60 * 60 * 24 * days))
+        
+        let lastXDays = Date().addingTimeInterval(TimeInterval(-60 * 60 * 24 * days.rawValue))
         
         let datePredicate = HKQuery.predicateForSamples(withStart: lastXDays, end: .now)
         let predicates = NSCompoundPredicate(andPredicateWithSubpredicates: [sleepPredicate, datePredicate])
@@ -63,7 +80,9 @@ class HealthKitManager: ObservableObject {
                 let seconds = Int(endDate.timeIntervalSince(startDate))
                 totalSleep += seconds
             }
-            self.sleepForLastXDays[days] = totalSleep
+            DispatchQueue.main.async {
+                self.sleepForLastXDays[days] = totalSleep
+            }
         }
         healthStore.execute(query)
     }
