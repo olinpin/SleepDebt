@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SleepDebtApp: App {
+    @StateObject var healthKitManager = HealthKitManager()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(healthKitManager)
         }
     }
 }
