@@ -12,7 +12,7 @@ struct SettingsView: View {
     @FocusState private var focusItem: Bool
     private var repaymentString = "Repayment period (days)"
     private var sleepDebtString = "Sleep debt period (days)"
-    private var desiredHoursOfSleepString = "Desired hours of sleep"
+    private var desiredHoursOfSleepString = "Desired hours of sleep per day"
     
     var body: some View {
         NavigationStack {

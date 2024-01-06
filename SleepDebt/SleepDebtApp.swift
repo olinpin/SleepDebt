@@ -16,6 +16,8 @@ struct SleepDebtApp: App {
             SleepDebtTabView()
                 .environmentObject(healthKitManager)
                 .environmentObject(settings)
+                .preferredColorScheme(.dark)
+
         }
     }
 }
