@@ -26,6 +26,8 @@ class HealthKitManager: ObservableObject {
                 print(error)
             }
         }
+        self.getSleepForLastXDays(days: 7)
+        self.getSleepForLastXDays(days: 30)
     }
     
     func getSleepForLast7Days() -> Int {

@@ -14,6 +14,7 @@
 		6C560B932B495E3A00FDB70C /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C560B922B495E3A00FDB70C /* HealthKitManager.swift */; };
 		6CD7B4BB2B49AA5100D1D8B8 /* SleepDebtTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD7B4BA2B49AA5100D1D8B8 /* SleepDebtTabView.swift */; };
 		6CD7B4BD2B49AB3F00D1D8B8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD7B4BC2B49AB3F00D1D8B8 /* SettingsView.swift */; };
+		6CD7B4C12B49C45400D1D8B8 /* SettingsNumberFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD7B4C02B49C45400D1D8B8 /* SettingsNumberFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6C560B942B49605000FDB70C /* SleepDebt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SleepDebt.entitlements; sourceTree = "<group>"; };
 		6CD7B4BA2B49AA5100D1D8B8 /* SleepDebtTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepDebtTabView.swift; sourceTree = "<group>"; };
 		6CD7B4BC2B49AB3F00D1D8B8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		6CD7B4C02B49C45400D1D8B8 /* SettingsNumberFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNumberFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				6C560B862B495DED00FDB70C /* HomeView.swift */,
 				6CD7B4BA2B49AA5100D1D8B8 /* SleepDebtTabView.swift */,
 				6CD7B4BC2B49AB3F00D1D8B8 /* SettingsView.swift */,
+				6CD7B4C02B49C45400D1D8B8 /* SettingsNumberFieldView.swift */,
 				6C560B922B495E3A00FDB70C /* HealthKitManager.swift */,
 				6C560B882B495DEE00FDB70C /* Assets.xcassets */,
 				6C560B8A2B495DEE00FDB70C /* Preview Content */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C560B872B495DED00FDB70C /* HomeView.swift in Sources */,
+				6CD7B4C12B49C45400D1D8B8 /* SettingsNumberFieldView.swift in Sources */,
 				6CD7B4BB2B49AA5100D1D8B8 /* SleepDebtTabView.swift in Sources */,
 				6CD7B4BD2B49AB3F00D1D8B8 /* SettingsView.swift in Sources */,
 				6C560B852B495DED00FDB70C /* SleepDebtApp.swift in Sources */,

@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State var sleepDebtPeriod = 30
-    @State var repaymentPeriod = 7
-    @State var desiredHoursOfSleep = 8
+    @EnvironmentObject var settings: SleepDebtSettings
     @FocusState private var focusItem: Bool
     private var repaymentString = "Repayment period (days)"
     private var sleepDebtString = "Sleep debt period (days)"
@@ -20,9 +18,9 @@ struct SettingsView: View {
         NavigationStack {
             List {
                 Section {
-                    SettingsNumberField(value: $sleepDebtPeriod, focusItem: $focusItem, text: sleepDebtString)
-                    SettingsNumberField(value: $repaymentPeriod, focusItem: $focusItem, text: repaymentString)
-                    SettingsNumberField(value: $desiredHoursOfSleep, focusItem: $focusItem, text: desiredHoursOfSleepString)
+                    SettingsNumberFieldView(value: $settings.sleepDebtPeriod, focusItem: $focusItem, text: sleepDebtString)
+                    SettingsNumberFieldView(value: $settings.repaymentPeriod, focusItem: $focusItem, text: repaymentString)
+                    SettingsNumberFieldView(value: $settings.desiredHoursOfSleep, focusItem: $focusItem, text: desiredHoursOfSleepString)
                 }
                 
             }
@@ -31,6 +29,7 @@ struct SettingsView: View {
         .onTapGesture{
             focusItem = false
         }
+        .environmentObject(settings)
     }
     
     
@@ -38,27 +37,7 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
+        .environmentObject(HealthKitManager())
+        .environmentObject(SleepDebtSettings())
 }
 
-struct SettingsNumberField: View {
-    @Binding var value: Int
-    var focusItem: FocusState<Bool>.Binding
-    var text: String
-    let formatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        return formatter
-    }()
-    var body: some View {
-        LabeledContent {
-            TextField("", value: $value, formatter: formatter)
-                .keyboardType(.numberPad)
-                .focused(focusItem)
-                .multilineTextAlignment(.trailing)
-                .foregroundStyle(.blue)
-        } label: {
-            Text(text)
-                .fixedSize()
-        }
-    }
-}

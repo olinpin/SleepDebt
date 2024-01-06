@@ -15,6 +15,7 @@ struct HomeView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
+            Text(String(manager.getSleepForLast7Days()))
         }
         .padding()
     }
@@ -23,4 +24,5 @@ struct HomeView: View {
 #Preview {
     HomeView()
         .environmentObject(HealthKitManager())
+        .environmentObject(SleepDebtSettings())
 }

@@ -10,10 +10,18 @@ import SwiftUI
 @main
 struct SleepDebtApp: App {
     @StateObject var healthKitManager = HealthKitManager()
+    @StateObject var settings = SleepDebtSettings()
     var body: some Scene {
         WindowGroup {
             SleepDebtTabView()
                 .environmentObject(healthKitManager)
+                .environmentObject(settings)
         }
     }
+}
+
+class SleepDebtSettings: ObservableObject {
+    @Published var sleepDebtPeriod = 30
+    @Published var repaymentPeriod = 7
+    @Published var desiredHoursOfSleep = 8
 }

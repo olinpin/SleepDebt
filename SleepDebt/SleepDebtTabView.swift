@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SleepDebtTabView: View {
     @State var selectedTab = "Home"
-    @StateObject var healthKitManager = HealthKitManager()
     var body: some View {
         TabView(selection: $selectedTab) {
             HomeView()
@@ -18,18 +17,18 @@ struct SleepDebtTabView: View {
                     Image(systemName: "house")
                     Text("Home")
                 }
-                .environmentObject(healthKitManager)
             SettingsView()
                 .tag("Settings")
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
                 }
-                .environmentObject(healthKitManager)
         }
     }
 }
 
 #Preview {
     SleepDebtTabView()
+        .environmentObject(SleepDebtSettings())
+        .environmentObject(HealthKitManager())
 }
