@@ -12,7 +12,7 @@ struct SleepDebtApp: App {
     @StateObject var healthKitManager = HealthKitManager()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SleepDebtTabView()
                 .environmentObject(healthKitManager)
         }
     }
