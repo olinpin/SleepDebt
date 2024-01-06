@@ -12,7 +12,7 @@ struct SleepDebtTabView: View {
     @StateObject var healthKitManager = HealthKitManager()
     var body: some View {
         TabView(selection: $selectedTab) {
-            ContentView()
+            HomeView()
                 .tag("Home")
                 .tabItem {
                     Image(systemName: "house")

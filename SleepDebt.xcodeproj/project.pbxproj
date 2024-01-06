@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6C560B852B495DED00FDB70C /* SleepDebtApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C560B842B495DED00FDB70C /* SleepDebtApp.swift */; };
-		6C560B872B495DED00FDB70C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C560B862B495DED00FDB70C /* ContentView.swift */; };
+		6C560B872B495DED00FDB70C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C560B862B495DED00FDB70C /* HomeView.swift */; };
 		6C560B892B495DEE00FDB70C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C560B882B495DEE00FDB70C /* Assets.xcassets */; };
 		6C560B8C2B495DEE00FDB70C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C560B8B2B495DEE00FDB70C /* Preview Assets.xcassets */; };
 		6C560B932B495E3A00FDB70C /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C560B922B495E3A00FDB70C /* HealthKitManager.swift */; };
@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		6C560B812B495DED00FDB70C /* SleepDebt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepDebt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C560B842B495DED00FDB70C /* SleepDebtApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepDebtApp.swift; sourceTree = "<group>"; };
-		6C560B862B495DED00FDB70C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6C560B862B495DED00FDB70C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6C560B882B495DEE00FDB70C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C560B8B2B495DEE00FDB70C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6C560B922B495E3A00FDB70C /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			children = (
 				6C560B942B49605000FDB70C /* SleepDebt.entitlements */,
 				6C560B842B495DED00FDB70C /* SleepDebtApp.swift */,
-				6C560B862B495DED00FDB70C /* ContentView.swift */,
+				6C560B862B495DED00FDB70C /* HomeView.swift */,
 				6CD7B4BA2B49AA5100D1D8B8 /* SleepDebtTabView.swift */,
 				6CD7B4BC2B49AB3F00D1D8B8 /* SettingsView.swift */,
 				6C560B922B495E3A00FDB70C /* HealthKitManager.swift */,
@@ -148,7 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C560B872B495DED00FDB70C /* ContentView.swift in Sources */,
+				6C560B872B495DED00FDB70C /* HomeView.swift in Sources */,
 				6CD7B4BB2B49AA5100D1D8B8 /* SleepDebtTabView.swift in Sources */,
 				6CD7B4BD2B49AB3F00D1D8B8 /* SettingsView.swift in Sources */,
 				6C560B852B495DED00FDB70C /* SleepDebtApp.swift in Sources */,
